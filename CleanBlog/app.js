@@ -18,15 +18,25 @@ app.use(express.static('CleanBlog/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//description
+const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
 //ROUTES
 app.get("/", async (req, res) => {
     const posts = await Post.find({});
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
     res.render("index", {
         posts,
         monthNames
+    })
+});
+
+app.get("/posts/:id", async (req, res) => {
+    const post = await Post.findById(req.params.id)
+    res.render("post", {
+        post,
+        monthNames  
     })
 });
 
