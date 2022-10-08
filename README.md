@@ -1,5 +1,4 @@
 ## Table of contents
-- [Table of contents](#table-of-contents)
 - [General info](#general-info)
 - [Technologies](#technologies)
 - [Setup](#setup)
@@ -30,4 +29,4 @@ $ npm start
 ```
 
 ## Live
-[Click Here]()
+[Click Here](https://hamza-cleanblog.herokuapp.com/)
