@@ -22,6 +22,14 @@
                   on <%= monthNames[post.dateCreated.getMonth()] %>
                     <%= post.dateCreated.getDate() %>,
                       <%= post.dateCreated.getFullYear() %></span>
+
+                <!-- Update-Delete box -->
+                <div class="btn-group my-5" role="group" aria-label="Basic mixed styles example">
+                  <a href="/posts/edit/<%= post._id %>" type="button " class="btn btn-primary">EDIT</a>
+                  <a href="/posts/<%= post._id %>?_method=DELETE" type="button " class="btn btn-danger"
+                    onclick="return confirm('ARE YOU SURE?')">DELETE</a>
+                </div>
+
               </div>
             </div>
           </div>
