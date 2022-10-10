@@ -5,11 +5,12 @@ const ejs = require("ejs");
 const path = require("path");
 const postController = require("./controllers/postController");
 const pageController = require("./controllers/pageController");
+require('dotenv').config({path:"./CleanBlog/.env"});
 
 const app = new express();
 
 //connect MongoDB
-mongoose.connect("mongodb+srv://hmzshn:database1234@cluster0.vbrxmxo.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGO_URI);
 
 //TEMPLATE ENGINE
 app.set('views', path.join(__dirname, 'views'));
